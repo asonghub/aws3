@@ -45,9 +45,9 @@
             })
 
             console.log('res', res)
-            for(let j =0; j < res.data.length; j++){
-                resultBox.innerHTML += `<img src = ${res.data[j].path}>`;
-            }
+            // for(let j =0; j < res.data.length; j++){
+            //     resultBox.innerHTML += `<img src = ${res.data[j].path}>`;
+            // }
 
             // res.data.forEach((elem)=>{
             //     resultBox.innerHTML += `<img src = "${elem.path}">`
@@ -60,12 +60,12 @@
             //     resultBox.appendChild(img);
             // }
 
-            // res.data.forEach((elem)=>{
-            //     const img = document.createElement('img');
-            //     img.src =elem.path;
-            //     img.style.width = '100px';
-            //     resultBox.appendChild(img); 
-            // })
+            res.data.forEach((elem)=>{
+                const img = document.createElement('img');
+                img.src =elem.location; //s3에서는 path대신 location
+                img.style.width = '100px';
+                resultBox.appendChild(img); 
+            })
 
         }
     </script>
